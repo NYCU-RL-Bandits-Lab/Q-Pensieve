@@ -5,17 +5,6 @@ import gym
 import torch
 import numpy as np
 import random
-'''
-from environments.dst_d import DeepSeaTreasure
-from environments.MO_lunar_lander5d import LunarLanderContinuous
-import environments.hopper_v3
-import environments.hopper5d_v3
-import environments.humanoid_v3
-import environments.half_cheetah_v3
-import environments.ant_v3
-import environments.walker2d_v3
-''' 
-
 
 from environments.dst_d import DeepSeaTreasure
 from environments.MO_lunar_lander5d import LunarLanderContinuous
