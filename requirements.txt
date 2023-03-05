@@ -1,0 +1,6 @@
+numpy
+torch
+gym
+tensorboard
+git+https://github.com/ku2482/rltorch
+git+https://github.com/fossasia/visdom
