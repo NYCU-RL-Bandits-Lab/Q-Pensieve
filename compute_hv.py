@@ -61,19 +61,14 @@ for i in range(5):
     env.continuous = True
     step = 0
 
-    #preference = torch.tensor( [0.45,0.45,0.1],dtype=torch.float32  )
-    p = [0,1]
-    print(p)
-    preference = torch.tensor( p,dtype=torch.float32  )
-
-
     episode_reward = np.zeros(env.reward_num)
     act = []
     sta = []
     tot = np.zeros((100, env.reward_num))
     epi = 0
     while epi<100:
-
+        p = [(epi)/100,1-(epi)/100]
+        preference = torch.tensor( p,dtype=torch.float32  )
         sta.append(list(state))
         action = exploit(state, preference)
         next_state, reward, done, _ = env.step(action)
@@ -92,8 +87,6 @@ for i in range(5):
             print(np.dot(episode_reward,p),episode_reward)
             print('='*70)
             utility.append(np.dot(episode_reward,p))
-            p = [(epi+1)/100,1-(epi+1)/100]
-            preference = torch.tensor( p,dtype=torch.float32  )
             act = []
             sta = []
             episode_reward = np.zeros(env.reward_num)
