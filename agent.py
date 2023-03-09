@@ -93,7 +93,7 @@ class SacAgent:
                  multi_step=1, per=False, alpha=0.6, beta=0.4,
                  beta_annealing=0.0001, grad_clip=None, updates_per_step=1,
                  start_steps=10000, log_interval=10, target_update_interval=1,
-                 eval_interval=1000, cuda=True, seed=0, cuda_device=0, q_frequency=1000):
+                 eval_interval=1000, cuda=True, seed=0, cuda_device=0, q_frequency=1000, model_saved_step=100000):
         self.env = env
 
         torch.manual_seed(seed)
@@ -351,8 +351,8 @@ class SacAgent:
                 for i in range(len(PREF_)):
                     #self.evaluate(PREF_[i],self.monitor[i],i)
                     self.evaluate_(PREF_[i],i)
-                if self.steps % 100000 == 0:
-                    self.save_models(self.steps/100000)
+                if self.steps % model_saved_step == 0:
+                    self.save_models(self.steps/model_saved_step)
 
             state = next_state
 
