@@ -49,7 +49,7 @@ pip install -r requirements.txt
 Run the main file with python:
 
 ```shell
-python main.py --seed 1 --prefer 4 --buf_num 4 --q_freq 1000
+python main.py --env_id "MO_hopper-v0" --seed 1 --prefer 4 --buf_num 4 --q_freq 1000
 ```
 config: 
 - prefer: The size of preference set.
@@ -58,6 +58,14 @@ config:
 
 
 ### Testing
+
+The results are saved under the folder:
+
+```
+logs/{env_id}/MOSAC-set{prefer}-buf{buf_num}-seed{seed}_freq{q_freq}/model
+logs/{env_id}/MOSAC-set{prefer}-buf{buf_num}-seed{seed}_freq{q_freq}/summary
+```
+
 ```
 python test.py --prefer 4 --buf_num 4
 ```
