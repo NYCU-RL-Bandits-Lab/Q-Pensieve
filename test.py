@@ -37,7 +37,7 @@ def explore(state, preference):
         return action.cpu().numpy().reshape(-1)
 
 def exploit(state, preference):
-        # act without policy.load(f'./logs/{env_name}/{date}/model/policy_{args.model_id}.0.pth')
+        # act without noisy
 
         state = torch.FloatTensor(state).unsqueeze(0).to(device)
         preference = preference.clone().detach().to(device).unsqueeze(0)
@@ -86,8 +86,6 @@ policy.load(f'./logs/{env_name}/{date}/model/policy_{args.model_id}.0.pth')
 state=env.reset()
 env.continuous = True
 step = 0
-
-#preference = torch.tensor( [0.45,0.45,0.1],dtype=torch.float32  )
 
 epi = 0
 epi_num = 10
