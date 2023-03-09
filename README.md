@@ -48,3 +48,5 @@ You can also edit the hyperparamter in configs.
 python test.py --prefer 4 --buf_num 4
 ```
 
+## Refference
+[rltorch](https://github.com/toshikwa/rltorch)
