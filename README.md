@@ -6,7 +6,9 @@
 
 Wei Hung\*, Bo Kai Huang\*, [Ping-Chun Hsieh](https://pinghsieh.github.io/), Xi Liu
 
-*The Eleventh Conference on International Conference on Learning Representations (ICLR 023)*
+*The Eleventh Conference on International Conference on Learning Representations (ICLR 2023)*
+
+[[Paper]](https://openreview.net/pdf?id=AwWaBXLIJE)
 
 ## Requirements
 - Python 3.7.9
