@@ -81,6 +81,11 @@ config:
 
 *Explanation --- model_saved_step is the interval between model saved.
 
+## Custom Problem Setup
+
+If you want to evaluate with different environment which is not mentioned in this work. You can put your env in folder environments/ and set reward in verctor format. The dimension of reward vector can be set by user. If the dimension of the reward vector function exceeds 5, you need to create a pref_table yourself to evaluate performance.
+
+
 ## Refference
 [rltorch](https://github.com/toshikwa/rltorch) -  a simple framework for reinforcement learning in PyTorch.
 
