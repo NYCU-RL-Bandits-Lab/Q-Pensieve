@@ -66,6 +66,8 @@ logs/{env_id}/MOSAC-set{prefer}-buf{buf_num}-seed{seed}_freq{q_freq}/model
 logs/{env_id}/MOSAC-set{prefer}-buf{buf_num}-seed{seed}_freq{q_freq}/summary
 ```
 
+Models are in pth format, and results are saved in npy format.
+
 ```
 python test.py --prefer 4 --buf_num 4
 ```
