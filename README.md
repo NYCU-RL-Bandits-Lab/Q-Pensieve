@@ -42,13 +42,21 @@ Install other required packages:
 pip install -r requirements.txt
 ```
 
-## Examples
+## Basic usage
+
 ### Training
-You can directly use the following command to train.
+
+Run the main file with python:
+
 ```shell
-python main.py --seed 1 --prefer 4 --buf_num 4
+python main.py --seed 1 --prefer 4 --buf_num 4 --q_freq 1000
 ```
-You can also edit the hyperparamter in configs.
+config: 
+- prefer: The size of preference set.
+- buf_num: he size of Q replay buffer.
+- q_freq: The update interval of Q replay buffer.
+
+
 ### Testing
 ```
 python test.py --prefer 4 --buf_num 4
