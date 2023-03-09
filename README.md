@@ -29,11 +29,19 @@ Q-Pensieve/
 ```
 
 ## Requirements
-- Python 3.7.9
-- Pytorch 1.3.1
+
+- Python version: tested in Python 3.9.12
+
+- Operating system: tested in Ubuntu 20.04
+
+- Pytorch version: 1.3.1
+
+Install other packages:
+
 ```
 pip install -r requirements.txt
 ```
+
 ## Examples
 ### Training
 You can directly use the following command to train.
