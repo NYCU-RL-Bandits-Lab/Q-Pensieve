@@ -52,7 +52,8 @@ def run():
         'cuda': args.cuda,
         'seed': args.seed,
         'cuda_device': args.cuda_device,
-        'q_frequency': args.q_freq
+        'q_frequency': args.q_freq,
+        'model_saved_step': 100000
     }
     
     env = gym.make(args.env_id)
