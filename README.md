@@ -53,7 +53,7 @@ python main.py --env_id "MO_hopper-v0" --seed 1 --prefer 4 --buf_num 4 --q_freq 
 ```
 config: 
 - prefer: The size of preference set.
-- buf_num: he size of Q replay buffer.
+- buf_num: The size of Q replay buffer.
 - q_freq: The update interval of Q replay buffer.
 
 
@@ -67,10 +67,19 @@ logs/{env_id}/MOSAC-set{prefer}-buf{buf_num}-seed{seed}_freq{q_freq}/summary
 ```
 
 Models are in pth format, and results are saved in npy format.
+And then we can execute the main test file with python:
 
 ```
-python test.py --prefer 4 --buf_num 4
+python test.py --env_id "MO_hopper-v0" --seed 1 --set_num 4 --buf_num 4 --q_freq 1000 --model_id 15 --ref_point [0, -300]
 ```
+config: 
+- set_num: The size of preference set.
+- buf_num: The size of Q replay buffer.
+- q_freq: The update interval of Q replay buffer.
+- ref_point: The refference point to caculate hypervolume
+- model_id: The model you want to train is in {model_saved_step} * {model_id} steps.
+
+*Explanation --- model_saved_step is the interval between model saved.
 
 ## Refference
 [rltorch](https://github.com/toshikwa/rltorch) -  a simple framework for reinforcement learning in PyTorch.
