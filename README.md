@@ -36,7 +36,7 @@ Q-Pensieve/
 
 - Pytorch version: 1.3.1
 
-Install other packages:
+Install other required packages:
 
 ```
 pip install -r requirements.txt
@@ -56,3 +56,18 @@ python test.py --prefer 4 --buf_num 4
 
 ## Refference
 [rltorch](https://github.com/toshikwa/rltorch) -  a simple framework for reinforcement learning in PyTorch.
+
+## Citation
+
+If you think our program is helpful, you can cite our work:
+
+```
+@inproceedings{
+hung2023qpensieve,
+title={Q-Pensieve: Boosting Sample Efficiency of Multi-Objective {RL} Through Memory Sharing of Q-Snapshots},
+author={Wei Hung and Bo Kai Huang and Ping-Chun Hsieh and Xi Liu},
+booktitle={The Eleventh International Conference on Learning Representations },
+year={2023},
+url={https://openreview.net/forum?id=AwWaBXLIJE}
+}
+```
