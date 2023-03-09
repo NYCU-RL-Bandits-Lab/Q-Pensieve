@@ -1,6 +1,12 @@
-# Q-Pensieve
+# Q-Pensieve: Boosting Sample Efficiency of Multi-Objective RL Through Memory Sharing of Q-Snapshots
 
 ![](https://i.imgur.com/7Zuv6Jw.png)
+
+**Q-Pensieve: Boosting Sample Efficiency of Multi-Objective RL Through Memory Sharing of Q-Snapshots**
+
+Wei Hung\*, Bo Kai Huang\*, [Ping-Chun Hsieh](https://pinghsieh.github.io/), Xi Liu
+
+*The Eleventh Conference on International Conference on Learning Representations (ICLR 023)*
 
 ## Requirements
 - Python 3.7.9
