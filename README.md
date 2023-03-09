@@ -49,4 +49,4 @@ python test.py --prefer 4 --buf_num 4
 ```
 
 ## Refference
-[rltorch](https://github.com/toshikwa/rltorch)
+[rltorch](https://github.com/toshikwa/rltorch) -  a simple framework for reinforcement learning in PyTorch.
