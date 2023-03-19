@@ -1,13 +1,11 @@
 from model import TwinnedQNetwork, GaussianPolicy
-import dst_d
 import gym
 import torch
 import numpy as np
-import half_cheetah_v3
-import hopper_v3
-import ant_v3
-import walker2d_v3
-
+from environments.dst_d import DeepSeaTreasure
+from environments.MO_lunar_lander5d import LunarLanderContinuous
+from environments import hopper_v3, hopper5d_v3, half_cheetah_v3, ant_v3, walker2d_v3, hopper3d_v3, ant3d_v3
+from agent import SacAgent
 import math
 import os
 
