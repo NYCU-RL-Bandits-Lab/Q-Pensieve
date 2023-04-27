@@ -8,7 +8,7 @@ Wei Hung\*, Bo Kai Huang\*, [Ping-Chun Hsieh](https://pinghsieh.github.io/), Xi 
 
 *The Eleventh Conference on International Conference on Learning Representations (ICLR 2023)*
 
-[[Paper]](https://openreview.net/pdf?id=AwWaBXLIJE)
+[[Paper]](https://openreview.net/pdf?id=AwWaBXLIJE), [\[Slide\]](./assests/Q_Pensieve_slide.pdf), [\[Poster\]](./assests/Q_Pensieve_poster.pdf)
 
 ## Code Structure
 
