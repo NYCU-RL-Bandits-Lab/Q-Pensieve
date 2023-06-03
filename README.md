@@ -81,6 +81,18 @@ config:
 
 *Explanation --- model_saved_step is the interval between model saved.
 
+## Computing UT and HV
+
+You need to save the results and preference table as npy format first.
+
+```
+python compute_utandhv.py --log-path "/Q_pensieve/logs/MOSAC_lunar5d_seed1.npy" --pref-table-path "/Q_pensieve/5pref_table.npy" --ref-point 0 -100 -100 -200 -2000
+```
+config: 
+--log-path: The path of result file.
+--pref-table-path: The path of preference table file.
+--ref-point: The reference point.
+
 ## Custom Problem Setup
 
 If you want to evaluate with different environment which is not mentioned in this work. You can put your env in folder environments/ and set reward in verctor format. The dimension of reward vector can be set by user. If the dimension of the reward vector function exceeds 5, you need to create a pref_table yourself to evaluate performance.
