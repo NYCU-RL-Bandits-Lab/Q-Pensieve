@@ -461,10 +461,11 @@ class SacAgent:
         for a, c in enumerate([ self.critic]+self.Q_memory.sample() ): # Use critic from Q Replay Buffer
             for b, i in enumerate(PREF): #Get Q from preference set W
                 p_batch = torch.tensor(i, device = self.device).repeat(self.batch_size, 1)
-                sampled_action, entropy, _ = self.policy.sample(states, p_batch)
+                sampled_action, entropy, _ = self.policy.sample(states, preference_batch)
+                entropy = entropy.reshape(-1)
                 if a == 0 and b == 0:
                     e = entropy
-                q1, q2 = c(states, sampled_action, preference_batch)
+                q1, q2 = c(states, sampled_action, p_batch)
                 
                 q1 = torch.tensordot(q1, preference, dims = 1)
                 q2 = torch.tensordot(q2, preference, dims = 1)
