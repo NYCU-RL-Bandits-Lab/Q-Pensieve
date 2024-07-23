@@ -454,17 +454,18 @@ class SacAgent:
         start = time.time()
         states, _, actions, rewards, next_states, dones = batch
         preference_batch = preference.repeat(self.batch_size, 1)
-        
+        sampled_action, entropy, _ = self.policy.sample(states, preference_batch)
+        entropy = entropy.reshape(-1)
         losses = []
 
         c_cnt = 0
         for a, c in enumerate([ self.critic]+self.Q_memory.sample() ): # Use critic from Q Replay Buffer
             for b, i in enumerate(PREF): #Get Q from preference set W
                 p_batch = torch.tensor(i, device = self.device).repeat(self.batch_size, 1)
-                sampled_action, entropy, _ = self.policy.sample(states, preference_batch)
-                entropy = entropy.reshape(-1)
+                '''
                 if a == 0 and b == 0:
                     e = entropy
+                '''
                 q1, q2 = c(states, sampled_action, p_batch)
                 
                 q1 = torch.tensordot(q1, preference, dims = 1)
@@ -480,9 +481,9 @@ class SacAgent:
         policy_loss = torch.mean(policy_loss)
 
         
-        sampled_action, e, _ = self.policy.sample(states, preference_batch)
+        sampled_action, entropy, _ = self.policy.sample(states, preference_batch)
 
-        return policy_loss, e
+        return policy_loss, entropy
 
     def calc_entropy_loss(self, entropy, weights):
         # Intuitively, we increse alpha when entropy is less than target
